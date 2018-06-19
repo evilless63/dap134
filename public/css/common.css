@@ -79,3 +79,11 @@ li.courses {
     line-height: 15px;
     letter-spacing: 0px;
 }
+
+.wrapper {
+    padding-bottom: 0px;
+}
+
+#content {
+    padding-bottom: 0px;
+}

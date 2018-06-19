@@ -266,7 +266,7 @@
                         </div>
                         <div class="checkbox checkbox-primary space-bottom">
                             <label class="hide"><input type="checkbox"></label>
-                            <input id="checkbox2" type="checkbox">
+                            <input id="checkbox2" type="checkbox" required>
                             <label for="checkbox2"><span><a href="#">Принимаю соглашение о передачи данных</a></span></label>
                         </div>
                         </div>
@@ -285,6 +285,7 @@
             </div>
 
             <!-- Footer Section -->
+            <div class="mb-60"></div>
             <footer class="footer">
 
                 <!-- Copyright -->
