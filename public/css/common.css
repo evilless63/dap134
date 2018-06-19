@@ -1,0 +1,81 @@
+.contact-form .contact-icon {
+    left: 25px;
+    position: absolute;
+    top: 9px;
+    color: #444;
+}
+
+.contact-form .form-control {
+    background: transparent;
+    padding: 7px 10px 7px 30px;
+    color: #444;
+}
+
+.form-control {
+    color: #444;
+    background: #f7f7f7;
+    font-weight: 400;
+    letter-spacing: 0px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    margin-bottom: 27px;
+    padding: 10px 20px;
+    min-height: 25px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.contact-form textarea {
+    height: 155px;
+    width: 100%;
+    background: transparent;
+    border: 1px solid #ddd;
+    padding: 18px 18px;
+    color: #444;
+    margin-bottom: 35px;
+    resize: vertical;
+}
+
+.btn {
+    font-size: 14px;
+    padding: 3px 27px;
+}
+
+.dropdown-item {
+    padding: 10px 22px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.top-menu ul li,.top-menu ul li i {
+    color: #fff !important;
+    font-size: 15px !important;
+    margin-right: 10px;
+    font-weight: 400;
+}
+
+.top-menu ul li.courses {
+    color: #fff !important;
+    font-size: 12px !important;
+    margin-right: 10px;
+    font-weight: 400;
+}
+
+.top-menu ul {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.top-menu ul.list-style li {
+    margin-bottom: 2px;
+    font-size: 14px;
+    position: relative;
+}
+
+li.courses {
+    line-height: 15px;
+    letter-spacing: 0px;
+}
