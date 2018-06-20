@@ -10,6 +10,8 @@
 
             <p class="lead text-center"><strong>Для просмотра списка имущества, выставленного на реализацию, нажмите на кнопку скачивания:</strong></p>
 
+            <div class="mb-60"></div>
+            
             <button type="button" class="btn std-btn btn-xlg btn-common text-center">
             <i class="fa fa-download icons"></i>
             Список имущества

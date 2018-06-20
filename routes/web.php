@@ -31,6 +31,27 @@ Route::get('/pravila-torgov', function () {
     return view('site.pravila-torgov');
 })->name('pravila-torgov');
 
+Route::get('/realizaciya-po-dogovoru', function () {
+    return view('site.realizaciya-po-dogovoru');
+})->name('realizaciya-po-dogovoru');
+
+Route::get('/obrazci-dokumentov', function () {
+    return view('site.obrazci-dokumentov');
+})->name('obrazci-dokumentov');
+
+Route::get('/normativnie-akti', function () {
+    return view('site.normativnie-akti');
+})->name('normativnie-akti');
+
+Route::get('/kontakty', function () {
+    return view('site.kontakty');
+})->name('kontakty');
+
+Route::get('/politic', function () {
+    return view('site.politic');
+})->name('politic');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

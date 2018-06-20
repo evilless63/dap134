@@ -16,7 +16,7 @@
                       <i class="fa fa-bolt"></i>
                     </div>
                     <div class="featured-content">
-                      <h4>Bootstrap 4</h4>
+                      <h4>Эффективность</h4>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.</p>
                     </div>
                   </div>
@@ -30,7 +30,7 @@
                       <i class="fa fa-diamond"></i>
                     </div>
                     <div class="featured-content">
-                      <h4>Clean Design</h4>
+                      <h4>Надежность</h4>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.</p>
                     </div>
                   </div>
@@ -41,10 +41,10 @@
                 <div class="col-md-6 col-sm-6">
                   <div class="featured-box">
                     <div class="featured-icon">
-                      <i class="fa fa-cubes"></i>
+                      <i class="fa fa-users"></i>
                     </div>
                     <div class="featured-content">
-                      <h4>100+ Components</h4>
+                      <h4>Опыт</h4>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.</p>
                     </div>
                   </div>
@@ -58,7 +58,7 @@
                       <i class="fa fa-cogs"></i>
                     </div>
                     <div class="featured-content">
-                      <h4>Easy to Customize</h4>
+                      <h4>Планирование</h4>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.</p>
                     </div>
                   </div>
@@ -85,9 +85,12 @@
                     <div class="blog-block">
                         <img src="img/blog/img1.jpg">
                         <div class="blog-content">
-                        <h3><a href="#">Post Title</a></h3>
+                        <h3><a href="{{ action('PostController@show', 1) }}">Post Title</a></h3>
+                        <div class="meta-tags">
+                            <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
+                        </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                        <a href="#" class="btn btn-common">Read More</a>
+                        <a href="{{ action('PostController@show', 1) }}" class="btn btn-common">Read More</a>
                         </div>
                     </div>
                     </div>
@@ -95,9 +98,12 @@
                     <div class="blog-block">
                         <img src="img/blog/img1.jpg">
                         <div class="blog-content">
-                        <h3><a href="#">Post Title</a></h3>
+                        <h3><a href="{{ action('PostController@show', 1) }}">Post Title</a></h3>
+                        <div class="meta-tags">
+                            <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
+                        </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                        <a href="#" class="btn btn-common">Read More</a>
+                        <a href="{{ action('PostController@show', 1) }}" class="btn btn-common">Read More</a>
                         </div>
                     </div>
                     </div>
@@ -105,9 +111,12 @@
                     <div class="blog-block">
                         <img src="img/blog/img1.jpg">
                         <div class="blog-content">
-                        <h3><a href="#">Post Title</a></h3>
+                        <h3><a href="{{ action('PostController@show', 1) }}">Post Title</a></h3>
+                        <div class="meta-tags">
+                            <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
+                        </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                        <a href="#" class="btn btn-common">Read More</a>
+                        <a href="{{ action('PostController@show', 1) }}" class="btn btn-common">Read More</a>
                         </div>
                     </div>
                     </div>

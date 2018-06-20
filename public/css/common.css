@@ -94,3 +94,46 @@ li.courses {
 #content {
     padding-bottom: 0px;
 }
+
+.table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+
+    text-align: left;
+ 
+}
+
+.table-hover-common tbody tr:hover {
+    background-color: rgba(0,0,0,.075);
+}
+
+.table-hover-common>tbody>tr>th, .table-hover-common>tfoot>tr>th, .table-hover-common>thead>tr>td, .table-hover-common>tbody>tr>td, .table-hover-common>tfoot>tr>td {
+    padding: .75rem;
+}
+
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 14px;
+    margin-right: 18px;
+    font-weight: 600;
+    padding: 18px 0px;
+}
+
+.post-img {
+   max-width: 30%;
+}
+
+#carousel-area .carousel-item .carousel-caption h4 {
+    color: #fff;
+}
+
+a.navbar-brand {
+    color: #fff !important;
+    font-size: 20px !important;
+    line-height: 20px;
+    font-weight: 700;
+    padding: 5px 0px;
+}
+
+a.navbar-brand:hover {
+    color: #f7f7f7 !important;
+}
