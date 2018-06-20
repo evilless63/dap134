@@ -19,6 +19,18 @@ Route::get('/', function () {
     return view('site.index');
 })->name('index');
 
+Route::get('/prodazha-imuschestva', function () {
+    return view('site.prodazha-imuschestva');
+})->name('prodazha-imuschestva');
+
+Route::get('/informacionnye-soobshcheniya', function () {
+    return view('site.informacionnye-soobshcheniya');
+})->name('informacionnye-soobshcheniya');
+
+Route::get('/pravila-torgov', function () {
+    return view('site.pravila-torgov');
+})->name('pravila-torgov');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

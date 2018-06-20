@@ -44,6 +44,13 @@
     padding: 3px 27px;
 }
 
+.btn.btn-xlg {
+    font-size: 22px;
+    min-width: 233px;
+    padding: 22px 27px;
+    font-weight: 600;
+}
+
 .dropdown-item {
     padding: 10px 22px;
     font-size: 14px;

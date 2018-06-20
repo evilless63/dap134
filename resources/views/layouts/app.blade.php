@@ -161,18 +161,18 @@
                                         <div class="col-md-12">
                                             <ul class="navbar-nav d-flex justify-content-center">
                                                 <li class="nav-item active">
-                                                    <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                                                    <a class="nav-link" href="{{ route('index') }}">Главная <span class="sr-only">(current)</span></a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Продажа имущества</a>
+                                                    <a class="nav-link" href="{{ route('prodazha-imuschestva') }}">Продажа имущества</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="#">Информационные сообщения</a>
+                                                    <a class="nav-link" href="{{ route('informacionnye-soobshcheniya') }}">Информационные сообщения</a>
                                                 </li>
                                                 <li class="nav-item dropdown">
                                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Условия реализации</a>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Правила торгов</a>
+                                                        <a class="dropdown-item" href="{{ route('pravila-torgov') }}">Правила торгов</a>
                                                         <a class="dropdown-item" href="#">Реализация по договору</a>
                                                         <a class="dropdown-item" href="#">Образцы документов</a>
                                                     </div>
