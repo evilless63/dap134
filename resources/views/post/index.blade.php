@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Новости')
+
 @section('content')
 {{$id = '1'}}
 <div class="container">
