@@ -97,7 +97,7 @@
                         </div>
                         <div class="col-sm-12">
                         <div class="form-group">
-                            <textarea id="message" rows="4" placeholder="Message" required data-error="Пожалуйста, опишите Ваш вопрос"></textarea>
+                            <textarea id="message" rows="4" placeholder="Текст письма" required data-error="Пожалуйста, опишите Ваш вопрос"></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
 

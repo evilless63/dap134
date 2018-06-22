@@ -15,15 +15,15 @@
                 <div class="carousel-caption">
                 <h3 class="slide-title animated fadeInDown">Департамент Аукционных Продаж</h3>
                 <h4 class="slide-text animated fadeIn">Продажа имущества</h4>
-                <h5 class="slide-text animated fadeIn">404130, г. Волжский, ул. 6-я Автодорога, д. ДОМ 31, оф. ОФИС 3</h5>
+                <h5 class="slide-text animated fadeIn">400038, г. Волгоград, ул. Волгоградская, д. 31, офис 3</h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="{{ asset('img/slider/bg-2.jpg') }}" alt="">
                 <div class="carousel-caption">
-                <h3 class="slide-title animated fadeInDown">Реализация и продажа залогового имущества</h3>
+                <h3 class="slide-title animated fadeInDown">Реализация арестованного имущества</h3>
                 <h4 class="slide-text animated fadeIn">Департамент Аукционных Продаж</h4>
-                <h5 class="slide-text animated fadeIn">404130, г. Волжский, ул. 6-я Автодорога, д. ДОМ 31, оф. ОФИС 3</h5>
+                <h5 class="slide-text animated fadeIn">400038, г. Волгоград, ул. Волгоградская, д. 31, офис 3</h5>
                 </div>
             </div>
             <div class="carousel-item">
@@ -31,7 +31,7 @@
                 <div class="carousel-caption">
                 <h3 class="slide-title animated fadeInDown">Эксперты по реализации имущества</h3>
                 <h4 class="slide-text animated fadeIn">Продажа активов крупнейших гос. компаний и частного бизнеса</h4>
-                <h5 class="slide-text animated fadeIn">404130, г. Волжский, ул. 6-я Автодорога, д. ДОМ 31, оф. ОФИС 3</h5>
+                <h5 class="slide-text animated fadeIn">400038, г. Волгоград, ул. Волгоградская, д. 31, офис 3</h5>
                 </div>
             </div>
             </div>

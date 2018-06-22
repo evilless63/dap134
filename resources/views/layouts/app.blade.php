@@ -81,10 +81,10 @@
                     <div class="contact-info">
                         <address>
                                             <i class="fa fa-map-marker icons cyan-color contact-info-icon"></i>
-                                            Г. Волжский, Пр. Ленина 46, Офис 15
+                                            400038, г. Волгоград, ул. Волгоградская, д. 31, офис 3
                                         </address>
                         <div class="tel-info">
-                            <a href="tel:1800452308"><i class="fa fa-mobile icons cyan-color contact-info-icon"></i>1800 452 308</a>
+                            <a href="tel:1800452308"><i class="fa fa-mobile icons cyan-color contact-info-icon"></i>+7 (969) 658-62-88</a>
                         </div>
                         <a href="mailto:hello@spiritapp.com"><i class="fa fa-envelope-o icons cyan-color contact-info-icon"></i>dap134@yandex.ru</a>
                     </div>
@@ -115,7 +115,7 @@
                         </div>
                         <div class="col-sm-12">
                         <div class="form-group">
-                            <textarea id="message" rows="4" placeholder="Message" required data-error="Пожалуйста, опишите Ваш вопрос"></textarea>
+                            <textarea id="message" rows="4" placeholder="Текст письма" required data-error="Пожалуйста, опишите Ваш вопрос"></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
 

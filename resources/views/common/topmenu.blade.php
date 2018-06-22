@@ -14,7 +14,7 @@
                         <div class="col">
                             <ul class="list-style warning-list pl-0">
                                 <li>
-                                    <i class="fa fa-mobile-phone"></i>+9 34476 3244
+                                    <i class="fa fa-mobile-phone"></i>+7 (969) 658-62-88
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i>dap134@yandex.ru

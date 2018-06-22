@@ -32,7 +32,7 @@
                             <div class="featured-content">
                                 <h4>Адрес</h4>
                                 <p class="lead"><strong>Юридический адрес:</strong> Россия, 404110, Волгоградская обл., г. Волжский, пр. Ленина 46, Офис 15</p>
-                                <p class="lead"><strong>Фактический адрес:</strong> Россия, 404130, Волгоградская обл., г. Волжский, ул. 6-я Автодорога, д. ДОМ 31, оф. ОФИС 3</p>
+                                <p class="lead"><strong>Фактический адрес:</strong> 400038, г. Волгоград, ул. Волгоградская, д. 31, офис 3</p>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="featured-content">
                                 <h4>Телефон</h4>
-                                <p class="lead"><strong>+9 34476 3244</strong></p>
+                                <p class="lead"><strong>+7 (969) 658-62-88</strong></p>
                             </div>
                         </div>
                     </div>
