@@ -23,9 +23,13 @@ Route::get('/prodazha-imuschestva', function () {
     return view('site.prodazha-imuschestva');
 })->name('prodazha-imuschestva');
 
-Route::get('/informacionnye-soobshcheniya', function () {
-    return view('site.informacionnye-soobshcheniya');
-})->name('informacionnye-soobshcheniya');
+// Route::get('/informacionnye-soobshcheniya', function () {
+//     return view('site.informacionnye-soobshcheniya');
+// })->name('informacionnye-soobshcheniya');
+
+Route::resource('documents', 'DocumentController');
+
+Route::resource('posts', 'PostController');
 
 Route::get('/pravila-torgov', function () {
     return view('site.pravila-torgov');
@@ -51,10 +55,19 @@ Route::get('/politic', function () {
     return view('site.politic');
 })->name('politic');
 
+// Route::get('/admin/home', function () {
+//     return view('admin.home');
+// })->name('admin_home');
 
-Auth::routes();
+Route::get('/admin/home', 'AdminController@index')->name('admin_home');
+
+
+$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+$this->post('login', 'Auth\LoginController@login');
+$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('404',['as'=>'404','uses'=>'ErrorHandlerController@errorCode404']);
+// Route::get('405',['as'=>'405','uses'=>'ErrorHandlerController@errorCode405']);
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::resource('/documents', 'DocumentController');
-Route::resource('/posts', 'PostController');

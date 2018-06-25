@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Департамент Аукционных Продаж - @yield('title')</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -48,13 +48,13 @@
                 <!-- top menu start -->
                     @include('common.topmenu')
                 <!-- top menu end -->
-
+                
                 <!-- sliders -->
                     @include('common.sliders')
                 <!-- End sliders -->
 
-                <!-- Begin navbar -->     
-                    @include('common.nav')     
+                <!-- Begin navbar -->   
+                    @include('common.nav')      
                 <!-- End navbar -->
                 
             </header>
@@ -66,11 +66,29 @@
             
             <div class="container">
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h2 class="heading-title text-center">Краткая контактная информация</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                 <div class="col-md-6">
                     <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A29cac54784ad2bf361ff338c1c7b3d24451e2403faed1775831ce83de9d0cb7a&amp;source=constructor" width="100%" height="500" frameborder="0"></iframe>
                 </div>
 
                 <div class="col-md-6">
+                    <div class="contact-info">
+                        <address>
+                                            <i class="fa fa-map-marker icons cyan-color contact-info-icon"></i>
+                                            400038, г. Волгоград, ул. Волгоградская, д. 31, офис 3
+                                        </address>
+                        <div class="tel-info">
+                            <a href="tel:1800452308"><i class="fa fa-mobile icons cyan-color contact-info-icon"></i>+7 (969) 658-62-88</a>
+                        </div>
+                        <a href="mailto:hello@spiritapp.com"><i class="fa fa-envelope-o icons cyan-color contact-info-icon"></i>dap134@yandex.ru</a>
+                    </div>
+                    
                     <h4 class="contact-info-title">Форма для связи</h4>
                     <form class="contact-form" data-toggle="validator">
                     <div class="row">
@@ -126,6 +144,8 @@
                 
                 </div>
             </div>
+                        
+            <div class="mb-60"></div>
 
             <!-- Footer Section -->
                 @include('common.footer')

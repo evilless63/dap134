@@ -3,7 +3,7 @@
 @section('title', 'Новости')
 
 @section('content')
-{{$id = '1'}}
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">
@@ -15,89 +15,30 @@
             <section class="blog">
                 <div class="container">
                     <div class="row">
+                    @foreach($posts as $post)
                         <div class="col-md-4">
                             <div class="blog-block">
-                                <img src="img/blog/img1.jpg">
+                                <img src="{{ asset('img/posts/$post->image_path') }}">
                                 <div class="blog-content">
-                                <h3><a href="{{ action('PostController@show', $id) }}">Post Title</a></h3>
+                                <h3><a href="{{ action('PostController@show', $post->id) }}">{{$post->title}}</a></h3>
                                 <div class="meta-tags">
-                                    <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
+                                    <span class="date"><i class="lnr lnr-calendar-full"></i>{{$post->updated_at}}</span>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                                <a href="{{ action('PostController@show', $id) }}" class="btn btn-common">Read More</a>
+                                <p>{{mb_strimwidth($post->description, 0, 100, "...")}}</p>
+                                <a href="{{ action('PostController@show', $post->id) }}" class="btn btn-common">Читать</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="blog-block">
-                                <img src="img/blog/img1.jpg">
-                                <div class="blog-content">
-                                <h3><a href="{{ action('PostController@show', $id) }}">Post Title</a></h3>
-                                <div class="meta-tags">
-                                    <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                                <a href="{{ action('PostController@show', $id) }}" class="btn btn-common">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="blog-block">
-                                <img src="img/blog/img1.jpg">
-                                <div class="blog-content">
-                                <h3><a href="{{ action('PostController@show', $id) }}">Post Title</a></h3>
-                                <div class="meta-tags">
-                                    <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                                <a href="{{ action('PostController@show', $id) }}" class="btn btn-common">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+
+                    @if(is_int($loop->iteration / 3))
                     </div>
 
                     <div class="mb-60"></div>
                     
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="blog-block">
-                                <img src="img/blog/img1.jpg">
-                                <div class="blog-content">
-                                <h3><a href="{{ action('PostController@show', $id) }}">Post Title</a></h3>
-                                <div class="meta-tags">
-                                    <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                                <a href="{{ action('PostController@show', $id) }}" class="btn btn-common">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="blog-block">
-                                <img src="img/blog/img1.jpg">
-                                <div class="blog-content">
-                                <h3><a href="{{ action('PostController@show', $id) }}">Post Title</a></h3>
-                                <div class="meta-tags">
-                                    <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                                <a href="{{ action('PostController@show', $id) }}" class="btn btn-common">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="blog-block">
-                                <img src="img/blog/img1.jpg">
-                                <div class="blog-content">
-                                <h3><a href="{{ action('PostController@show', $id) }}">Post Title</a></h3>
-                                <div class="meta-tags">
-                                    <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                                <a href="{{ action('PostController@show', $id) }}" class="btn btn-common">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+                    @endif
+
+                    @endforeach
                     </div>
                 </div>
             </section>

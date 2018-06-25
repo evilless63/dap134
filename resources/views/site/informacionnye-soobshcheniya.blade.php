@@ -11,36 +11,13 @@
             </div>
 
             <ul class="list-style arrow-list arrow-list-one pl-0">
+                @foreach($documents as $document)
                 <li>
-                    <a href="">
-                        <i class="fa fa-download icons" aria-hidden="true"></i> Lorem ipsum dolor sit amet,
+                    <a href="{{$document->file_path}}">
+                        <i class="fa fa-download icons" aria-hidden="true"></i> {{$document->title}}
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        <i class="fa fa-download icons" aria-hidden="true"></i> Lorem ipsum dolor sit amet,
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="fa fa-download icons" aria-hidden="true"></i> Lorem ipsum dolor sit amet,
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="fa fa-download icons" aria-hidden="true"></i> Lorem ipsum dolor sit amet,
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="fa fa-download icons" aria-hidden="true"></i> Lorem ipsum dolor sit amet,
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="fa fa-download icons" aria-hidden="true"></i> Lorem ipsum dolor sit amet,
-                    </a>
-                </li>
+                @endforeach
             </ul>           
             
         </div>

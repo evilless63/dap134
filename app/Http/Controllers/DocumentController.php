@@ -14,7 +14,8 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        //
+        $documents = Document::where('is_active', '1')->get();
+        return view('site.informacionnye-soobshcheniya', compact('documents'));
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -13,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        $posts = Post::where('is_active', '1')->get();
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -45,7 +47,13 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return view('post.single', compact('id'));
+        $post = Post::where('id', $id)->first();
+
+        if($post === null){
+            return abort(404);
+        }
+
+        return view('post.single', compact('post'));
     }
 
     /**

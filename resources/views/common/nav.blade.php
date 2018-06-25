@@ -14,7 +14,7 @@
                         <a class="nav-link" href="{{ route('prodazha-imuschestva') }}">Продажа имущества</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('informacionnye-soobshcheniya') }}">Информационные сообщения</a>
+                        <a class="nav-link" href="{{ route('documents.index') }}">Информационные сообщения</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Условия реализации</a>
@@ -28,7 +28,7 @@
                         <a class="nav-link" href="{{ route('normativnie-akti') }}">Нормативные акты</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ action('PostController@index') }}">Новости</a>
+                        <a class="nav-link" href="{{ route('posts.index') }}">Новости</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('kontakty') }}">Контакты</a>
