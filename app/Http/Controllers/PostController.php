@@ -47,7 +47,7 @@ class PostController extends Controller
         $post->image_path = $image_path;
         $post->title = $request->title;
         $post->description = $request->description;
-        $post->description_preview = mb_strimwidth(strip_tags($post->description), 0, 100, "...");
+        $post->description_preview = mb_strimwidth(strip_tags($post->description), 0, 30, "...");
         $post->is_active = 1;
 
         $post->save();
@@ -106,7 +106,7 @@ class PostController extends Controller
         if ($request->has('description'))
         {
             $post->description = $request->get('description');
-            $post->description_preview = mb_strimwidth(strip_tags($post->description), 0, 100, "...");
+            $post->description_preview = mb_strimwidth(strip_tags($post->description), 0, 30, "...");
         }
 
         
