@@ -37,6 +37,10 @@
     <!-- common styles -->
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
 
+    <script src="//cdn.ckeditor.com/4.10.0/standard/ckeditor.js"></script>
+    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body class="bg-light">
     <!-- Page Wrapper Start -->
@@ -64,6 +68,21 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
+    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+      @if(Session::has('alert-' . $msg))
+        <div class="alert alert-{{ $msg }} col-md-12 alert-dismissible fade show" style="" role="alert">
+        {{ Session::get('alert-' . $msg) }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      @endif
+    @endforeach
+    @if (session()->has('message'))
+        <div class="alert alert-info">{{ session('message') }}</div>
+    @endif
+
     <nav class="navbar navbar-toggleable-sm navbar-light bg-default">
         <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
@@ -109,6 +128,6 @@
     <script src="{{ asset('js/plugs/form-validator.min.js') }}"></script>
     <script src="{{ asset('js/plugs/contact-form-script.js') }}"></script>
     <script src="{{ asset('js/plugs/main.js') }}"></script>
-    
+    <script src="{{ asset('js/admin.js') }}"></script> 
 </body>
 </html>

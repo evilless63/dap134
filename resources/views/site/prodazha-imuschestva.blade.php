@@ -14,10 +14,10 @@
 
             <div class="mb-60"></div>
             
-            <button type="button" class="btn std-btn btn-xlg btn-common text-center">
+            <a href="{{asset('/document_files/list/list_of_property.doc')}}" class="btn std-btn btn-xlg btn-common text-center">
             <i class="fa fa-download icons"></i>
             Список имущества
-            </button>
+            </a>
             
             
         </div>

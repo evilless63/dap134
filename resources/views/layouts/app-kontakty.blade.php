@@ -39,6 +39,21 @@
 
 </head>
 <body>
+
+    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+      @if(Session::has('alert-' . $msg))
+        <div class="alert alert-{{ $msg }} col-md-12 alert-dismissible fade show" style="" role="alert">
+        {{ Session::get('alert-' . $msg) }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      @endif
+    @endforeach
+    @if (session()->has('message'))
+        <div class="alert alert-info">{{ session('message') }}</div>
+    @endif
+
     <!-- Page Wrapper Start -->
     <div class="wrapper">
         <div id="content" class="">
@@ -90,45 +105,46 @@
                     </div>
                     
                     <h4 class="contact-info-title">Форма для связи</h4>
-                    <form class="contact-form" data-toggle="validator">
+                    <form class="contact-form" data-toggle="validator" action="{{action('MailController@sendemail')}}" method="post" enctype="multipart/form-data">
+                    {{csrf_field()}}
                     <div class="row">
                         <div class="col-sm-4">
                         <div class="form-group">
                             <i class="contact-icon fa fa-user"></i>
-                            <input type="text" class="form-control" id="name" placeholder="Представьтесь" required data-error="Пожалуйста, укажите, как к Вам обращаться">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Представьтесь" required data-error="Пожалуйста, укажите, как к Вам обращаться">
                             <div class="help-block with-errors"></div>
                         </div>
                         </div>
                         <div class="col-sm-4">
                         <div class="form-group">
                             <i class="contact-icon fa fa-envelope-o"></i>
-                            <input type="email" class="form-control" id="email" placeholder="Email" required data-error="Пожалуйста, укажите Ваш email">
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Email" required data-error="Пожалуйста, укажите Ваш email">
                             <div class="help-block with-errors"></div>
                         </div>
                         </div>
                         <div class="col-sm-4">
                         <div class="form-group">
                             <i class="contact-icon fa fa-pencil-square-o"></i>
-                            <input type="text" class="form-control" id="subject" placeholder="Тема письма" required data-error="Пожалуйста, укажите тему письма">
+                            <input type="text" name="subject" class="form-control" id="subject" placeholder="Тема письма" required data-error="Пожалуйста, укажите тему письма">
                             <div class="help-block with-errors"></div>
                         </div>
                         </div>
                         <div class="col-sm-12">
                         <div class="form-group">
-                            <textarea id="message" rows="4" placeholder="Текст письма" required data-error="Пожалуйста, опишите Ваш вопрос"></textarea>
+                            <textarea id="message" name="message" rows="4" placeholder="Текст письма" required data-error="Пожалуйста, опишите Ваш вопрос"></textarea>
                             <div class="help-block with-errors"></div>
                         </div>
 
                         <div class="pull-left">
                         <div class="checkbox checkbox-primary space-bottom">
                             <label for="files"><span>Вы можете прикрепить документы: </span></label>
-                            <label class="hide"><input type="file"></label>
-                            <input id="file" type="file">
+                            <input type="file" name="files[]" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf, image/*" multiple>
                         </div>
                         <div class="checkbox checkbox-primary space-bottom">
                             <label class="hide"><input type="checkbox"></label>
-                            <input id="checkbox2" type="checkbox" required>
-                            <label for="checkbox2"><span><a href="{{ route('politic') }}">Принимаю соглашение о передачи данных</a></span></label>
+                            <input type="hidden" name="politic" value="0">
+                            <input id="checkbox2" value="1" name="politic" type="checkbox" required>
+                            <label for="checkbox2"><span><a href="{{ route('politic') }}">Принимаю соглашение об обработке данных</a></span></label>
                         </div>
                         </div>
                         <div class="pull-left">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Session;
 
 class PostController extends Controller
 {
@@ -25,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -36,7 +37,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->hasfile('image_path')) {
+            $file = $request->image_path;
+            $image_path = time().$file->getClientOriginalName();
+            $file->move(public_path().'/posts_files/', $image_path);
+        }
+
+        $post = new Post();
+        $post->image_path = $image_path;
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->description_preview = mb_strimwidth(strip_tags($post->description), 0, 100, "...");
+        $post->is_active = 1;
+
+        $post->save();
+
+        $request->session()->flash('alert-success', 'Информация успешно добавлена !');
+        return redirect('/admin/home');
     }
 
     /**
@@ -47,12 +64,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::where('id', $id)->first();
-
-        if($post === null){
-            return abort(404);
-        }
-
+        $post = Post::findorfail($id);
         return view('post.single', compact('post'));
     }
 
@@ -64,7 +76,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findorfail($id);
+        return view('post.edit', compact('post'));
     }
 
     /**
@@ -76,7 +89,37 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findorfail($id);
+
+        if($request->hasfile('image_path')) {
+            $file = $request->image_path;
+            $image_path = time().$file->getClientOriginalName();
+            $file->move(public_path().'/posts_files/', $image_path);
+            $post->image_path = $image_path;
+        }
+
+        if ($request->has('title'))
+        {
+            $post->title = $request->get('title');
+        }
+
+        if ($request->has('description'))
+        {
+            $post->description = $request->get('description');
+            $post->description_preview = mb_strimwidth(strip_tags($post->description), 0, 100, "...");
+        }
+
+        
+
+        if ($request->has('is_active'))
+        {
+            $post->is_active = $request->get('is_active');
+        }
+
+        $post->save();
+
+        Session::flash('alert-success', 'Информация успешно обновлена !');
+        return redirect('/admin/home');
     }
 
     /**
@@ -87,6 +130,15 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findorfail($id);
+        $destinationPath = '/posts_files/';
+
+        unlink(public_path('/posts_files/'.$post->image_path));
+
+        $post->delete();
+        
+
+        Session::flash('alert-success', 'Информация успешно удалена !');
+        return redirect('/admin/home');
     }
 }

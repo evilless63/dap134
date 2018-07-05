@@ -82,47 +82,40 @@
             <!-- Start Blog Section 3 -->
             <section class="blog">
                 <div class="container">
+                
                 <div class="row">
-                    <div class="col-md-4">
-                    <div class="blog-block">
-                        <img src="img/blog/img1.jpg">
-                        <div class="blog-content">
-                        <h3><a href="{{ action('PostController@show', 1) }}">Post Title</a></h3>
-                        <div class="meta-tags">
-                            <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
+
+                    @foreach($posts as $post)
+
+                    
+                        <div class="col-md-4">
+                            <div class="blog-block">
+                                <img style="height: 200px; background: url({{ asset('posts_files/'.$post->image_path) }}); background-size: cover;" src="">
+                                <div class="blog-content">
+                                <h3><a href="{{ action('PostController@show', $post->id) }}">{{$post->title}}</a></h3>
+                                <div class="meta-tags">
+                                    <span class="date"><i class="lnr lnr-calendar-full"></i>{{$post->updated_at}}</span>
+                                </div>
+                                <p>{{$post->description_preview}}</p>
+                                <a href="{{ action('PostController@show', $post->id) }}" class="btn btn-common">Читать</a>
+                                </div>
+                            </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                        <a href="{{ action('PostController@show', 1) }}" class="btn btn-common">Read More</a>
-                        </div>
+
+                    @if(is_int($loop->iteration / 3))
                     </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="blog-block">
-                        <img src="img/blog/img1.jpg">
-                        <div class="blog-content">
-                        <h3><a href="{{ action('PostController@show', 1) }}">Post Title</a></h3>
-                        <div class="meta-tags">
-                            <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                        <a href="{{ action('PostController@show', 1) }}" class="btn btn-common">Read More</a>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-md-4">
-                    <div class="blog-block">
-                        <img src="img/blog/img1.jpg">
-                        <div class="blog-content">
-                        <h3><a href="{{ action('PostController@show', 1) }}">Post Title</a></h3>
-                        <div class="meta-tags">
-                            <span class="date"><i class="lnr lnr-calendar-full"></i>29 Марта, 2018</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                        <a href="{{ action('PostController@show', 1) }}" class="btn btn-common">Read More</a>
-                        </div>
-                    </div>
-                    </div>
+
+                    <div class="mb-60"></div>
+                    
+                    <div class="row">
+                    @endif
+
+                    @endforeach
+
+                    
+
                 </div>
+
                 </div>
             </section>
             <!-- End Blog Section 3 -->

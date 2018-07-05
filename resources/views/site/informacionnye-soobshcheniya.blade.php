@@ -13,7 +13,7 @@
             <ul class="list-style arrow-list arrow-list-one pl-0">
                 @foreach($documents as $document)
                 <li>
-                    <a href="{{$document->file_path}}">
+                    <a href="/document_files/{{$document->file_path}}">
                         <i class="fa fa-download icons" aria-hidden="true"></i> {{$document->title}}
                     </a>
                 </li>

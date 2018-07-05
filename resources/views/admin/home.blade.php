@@ -18,7 +18,7 @@
                             <div class="col-md-3">
                                 <ul class="nav nav-tabs flex-column" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#documents" role="tab">Управление документами</a>
+                                        <a class="nav-link active" data-toggle="tab" href="#documents" role="tab">Управление документами</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#documents_create" role="tab">Добавить документ</a>
@@ -27,7 +27,7 @@
                                         <a class="nav-link" data-toggle="tab" href="#imushestvo" role="tab">Обновление списка имущества</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#posts" role="tab">Управление новостями</a>
+                                        <a class="nav-link" data-toggle="tab" href="#posts" role="tab">Управление новостями</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Просмотр сообщений</a>
@@ -37,8 +37,8 @@
                             
                             <div class="col">
                                 <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div class="tab-pane" id="documents" role="tabpanel">
+                                <div class="tab-content ">
+                                    <div class="tab-pane active " id="documents" role="tabpanel">
 
                                     <table class="table table-hover-common">
                                         <thead class="thead-inverse">
@@ -54,14 +54,25 @@
                                         <tbody>
                                             @foreach($documents as $document)
                                             <tr>
-                                                <form action="">
-                                                    <td><a href="{{$document->file_path}}">{{$document->file_path}}</a></td>
-                                                    <td><input type="file" class="form-control-file" id="exampleFormControlFile1"></td>
-                                                    <td><input type="text" value="{{$document->title}}"></td>
-                                                    <td><input type="checkbox" value="1" {{ $document->is_active == 1 ? 'checked' : ''}}></td>
-                                                    <td><div class="btn std-btn btn-sm btn-common">Обновить</div></td>
-                                                    <td><div class="btn std-btn btn-sm btn-common">Удалить</div></td>
+                                                <form method="post" action="{{action('DocumentController@update', $document->id)}}" enctype="multipart/form-data">
+                                                {{csrf_field()}}
+                                                <input name="_method" type="hidden" value="PATCH" />
+                                                    <td><a href="/document_files/{{$document->file_path}}">{{$document->file_path}}</a></td>
+                                                    <td><input type="file" name="file_path" class="form-control-file" id="exampleFormControlFile1"></td>
+                                                    <td><input type="text" name="title" value="{{$document->title}}"></td>
+                                                    <input type="hidden" name="is_active" value="0">
+                                                    <td><input type="checkbox" name="is_active"  value="1" {{ $document->is_active == 1 ? 'checked' : ''}}></td>
+                                                    <td><button type="submit" class="btn std-btn btn-sm btn-common">Обновить</button></td>
                                                 </form>
+                                                <td>
+                                                    <form action="{{action('DocumentController@destroy', $document->id)}}" method="post">
+                                                            {{csrf_field()}}
+                                                            <input name="_method" type="hidden" value="DELETE">
+                                                            <button type="submit" class="btn std-btn btn-sm btn-common">
+                                                                Удалить
+                                                            </button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -70,38 +81,104 @@
                                     </div>
                                     <div class="tab-pane" id="documents_create" role="tabpanel">
                                         
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="documentCreateFile">Файл документа</label>
-                                                <input type="file" class="form-control-file" id="documentCreateFile">
-                                            </div>
+                                    <form method="post" action="{{action('DocumentController@store')}}" enctype="multipart/form-data">
+                                        {{csrf_field()}}
+                                        <div class="form-group">
+                                            <label for="documentCreateFile">Файл документа</label>
+                                            <input type="file" name="file_path" class="form-control-file" id="documentCreateFile">
+                                        </div>
 
-                                            <div class="form-group">
-                                                <label for="documentCreateFileTitle">Наименование документа не более 255 символов</label>
-                                                <input type="text" class="form-control" id="documentCreateFileTitle" placeholder="Укажите наименование документа">
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="documentCreateFileTitle">Наименование документа не более 255 символов</label>
+                                            <input type="text" name="title" class="form-control" id="documentCreateFileTitle" placeholder="Укажите наименование документа">
+                                        </div>
 
-                                            <div class="btn std-btn btn-sm btn-common">Создать</div>
-                                        </form>
+                                        <button type="submit" class="btn std-btn btn-sm btn-common" id="">Создать</button>
+                                    </form>
 
                                     </div>
                                     <div class="tab-pane" id="imushestvo" role="tabpanel">
-                                        <form>
+                                        <form method="post" action="{{action('DocumentController@updatelist')}}" enctype="multipart/form-data">
+                                        {{csrf_field()}}
                                             <div class="form-group">
                                                 <label for="documentCreateFileImush">Файл с имуществом</label>
-                                                <input type="file" class="form-control-file" id="documentCreateFileImush">
+                                                <input type="file" name="file_list" class="form-control-file" id="documentCreateFileImush">
                                             </div>
 
-                                            <div class="btn std-btn btn-sm btn-common">Загрузить</div>
+                                            <button type="submit" class="btn std-btn btn-sm btn-common" id="">Загрузить</button>
                                         </form>
                                     </div>
-                                    <div class="tab-pane active" id="posts" role="tabpanel">
-                                        <p>It sportsman earnestly ye preserved an on. Moment led family sooner cannot her window pulled any. Or raillery if improved landlord to speaking hastened differed he. Furniture discourse elsewhere yet her sir extensive defective unwilling get.</p>
-                                        <p>Why resolution one motionless you him thoroughly. Noise is round to in it quick timed doors. Written address greatly get attacks inhabit pursuit our but.</p>
+                                    <div class="tab-pane" id="posts" role="tabpanel">
+                                    <a href="{{action('PostController@create')}}" class="btn std-btn btn-sm btn-common">Создать новость</a>
+                                    <table class="table table-hover-common">
+                                        <thead class="thead-inverse">
+                                            <tr>
+                                                <th>Изображение</th>
+                                                <th>Заголовок</th>
+                                                <th>Начало новости</th>
+                                                <th>Обновлено</th>
+                                                <th>Активен</th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($posts as $post)
+                                            <tr>
+                                                <form method="post" action="{{action('PostController@update', $post->id)}}" enctype="multipart/form-data">
+                                                {{csrf_field()}}
+                                                <input name="_method" type="hidden" value="PATCH" />
+                                                    <td><img src="{{ asset('posts_files/'. $post->image_path) }}" style="max-width: 75px;"></td>
+                                                    <td>{{$post->title}}</td>
+                                                    <td>{{$post->description_preview}}</td>
+                                                    <td>{{$post->updated_at}}</td>
+                                                    <input type="hidden" name="is_active" value="0">
+                                                    <td><input type="checkbox" name="is_active"  value="1" {{ $post->is_active == 1 ? 'checked' : ''}}></td>
+                                                    <td><button type="submit" class="btn std-btn btn-sm btn-common">Обновить</button></td>
+                                                    <td><a href="{{action('PostController@edit', $post->id)}}" class="btn std-btn btn-sm btn-common">Редактировать</a></td>
+                                                </form>
+                                                <td>
+                                                    <form action="{{action('PostController@destroy', $post->id)}}" method="post">
+                                                            {{csrf_field()}}
+                                                            <input name="_method" type="hidden" value="DELETE">
+                                                            <button type="submit" class="btn std-btn btn-sm btn-common">
+                                                                Удалить
+                                                            </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                     </div>
                                     <div class="tab-pane" id="messages" role="tabpanel">
-                                        <p>Certainty listening no no behaviour existence assurance situation is. Because add why not esteems amiable him. Interested the unaffected mrs law friendship add principles. Indeed on people do merits to. Court heard which up above hoped grave do.</p>
-                                        <p>death he at share alone. Yet outward the him compass hearted are tedious.</p>
+                                        <div class="row">
+                                        
+                                        @foreach($messages as $message)
+                                        <div class="col-md-6">
+                                            <form action="{{action('MailController@destroy', $message->id)}}" method="post">
+                                                {{csrf_field()}}
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <h4><strong>Тема:</strong> {{$message->subject}}</h4>
+
+                                                <p><strong>Почта:</strong> {{$message->email}}</p>
+                                                <p><strong>Имя:</strong> {{$message->name}}</p>
+
+                                                <p><strong>Сообщение:</strong> {{$message->text}}</p>
+                                                <button type="submit" class="btn std-btn btn-sm btn-common" id="">Удалить</button>
+                                                <div style="margin-top: 5px; border-bottom:1px solid #000;"></div>
+                                            </form>   
+                                        </div>
+
+                                        @if(is_int($loop->iteration / 2))
+                                            </div>
+                                            <div class="row">
+                                        @endif
+
+                                        @endforeach
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>

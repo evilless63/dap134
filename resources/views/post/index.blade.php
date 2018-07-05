@@ -18,13 +18,13 @@
                     @foreach($posts as $post)
                         <div class="col-md-4">
                             <div class="blog-block">
-                                <img src="{{ asset('img/posts/$post->image_path') }}">
+                                <img style="height: 200px; background: url({{ asset('posts_files/'.$post->image_path) }}) ;    background-size: cover;" src="">
                                 <div class="blog-content">
                                 <h3><a href="{{ action('PostController@show', $post->id) }}">{{$post->title}}</a></h3>
                                 <div class="meta-tags">
                                     <span class="date"><i class="lnr lnr-calendar-full"></i>{{$post->updated_at}}</span>
                                 </div>
-                                <p>{{mb_strimwidth($post->description, 0, 100, "...")}}</p>
+                                <p>{{$post->description_preview}}</p>
                                 <a href="{{ action('PostController@show', $post->id) }}" class="btn btn-common">Читать</a>
                                 </div>
                             </div>

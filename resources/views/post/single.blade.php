@@ -12,9 +12,9 @@
                 <h2 class="heading-title text-center">{{ $post->title }}</h2>
             </div>
 
-            <img src="{{ asset('img/posts/$post->image_path') }}" alt="" class="post-img float-right">
+            <img src="{{ asset('posts_files/'.$post->image_path) }}" alt="" class="post-img float-right">
 
-            {{ $post->description }}
+            {!!$post->description!!}
                 
         </div>
     </div>

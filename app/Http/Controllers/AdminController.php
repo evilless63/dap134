@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Post;
 use App\Document;
+use App\Message;
 
 class AdminController extends Controller
 {
@@ -15,8 +16,9 @@ class AdminController extends Controller
 
             $documents = Document::all(); 
             $posts = Post::all();
+            $messages = Message::all();
 
-            return view('admin.home', compact('documents', 'posts'));
+            return view('admin.home', compact('documents', 'posts','messages'));
             
         } else {
             return abort(404);

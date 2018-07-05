@@ -15,9 +15,11 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('site.index');
-})->name('index');
+// Route::get('/', 'AdminController@index')->name('admin_home');
+Route::get('/', 'HomeController@index')->name('index');
+// Route::get('/', function () {
+//     return view('site.index');
+// })->name('index');
 
 Route::get('/prodazha-imuschestva', function () {
     return view('site.prodazha-imuschestva');
@@ -70,4 +72,11 @@ Route::get('404',['as'=>'404','uses'=>'ErrorHandlerController@errorCode404']);
 // Route::get('405',['as'=>'405','uses'=>'ErrorHandlerController@errorCode405']);
 // Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('emails', 'MailController');
+
+Route::post('documents/updatelist', 'DocumentController@updatelist');
+
+Route::post('emails/sendemail', 'MailController@sendemail');
+
+
