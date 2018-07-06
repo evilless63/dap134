@@ -178,6 +178,16 @@
     <script src="{{ asset('js/plugs/form-validator.min.js') }}"></script>
     <script src="{{ asset('js/plugs/contact-form-script.js') }}"></script>
     <script src="{{ asset('js/plugs/main.js') }}"></script>
+
+    <script>
+    $.getJSON("https://www.cbr-xml-daily.ru/daily_json.js", function(data) {
+        $('#usd_kurs').html('Курс  <i class="fa fa-eur" aria-hidden="true"></i>на текущее время: '+data.Valute.USD.Value.toFixed(2)+' <i class="fa fa-rub" aria-hidden="true"></i>');
+    });
+
+    $.getJSON("https://www.cbr-xml-daily.ru/daily_json.js", function(data) {
+        $('#eur_kurs').html('Курс  <i class="fa fa-usd" aria-hidden="true"></i>на текущее время: '+data.Valute.EUR.Value.toFixed(2)+' <i class="fa fa-rub" aria-hidden="true"></i>');
+    });
+    </script>
     
 </body>
 </html>
