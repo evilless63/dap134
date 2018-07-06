@@ -110,14 +110,22 @@ class MailController extends Controller
             $message->from($data['email'], $data['name']);
             $message->to('vitaliy030589@gmail.com')->subject($data['subject'] . ' - ' .$data['email']);
 
-            if(count($files > 0)) {
-                foreach($files as $file) {
-                    $message->attach($file->getRealPath(), array(
-                        'as' => $file->getClientOriginalName(),       
-                        'mime' => $file->getMimeType())
-                    );
+            if(is_array($files)) {
+                if(count($files > 0)) {
+                    foreach($files as $file) {
+                        $message->attach($file->getRealPath(), array(
+                            'as' => $file->getClientOriginalName(),       
+                            'mime' => $file->getMimeType())
+                        );
+                    }
                 }
+            } else {
+                $message->attach($files->getRealPath(), array(
+                    'as' => $files->getClientOriginalName(),       
+                    'mime' => $files->getMimeType())
+                );
             }
+            
 
         });
 
