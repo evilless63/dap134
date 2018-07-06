@@ -35,16 +35,12 @@
 
 
                         <div class="col-md-4 text-right">
-                            <ul class="list-style warning-list pl-0">
-                            
-                                <li class="courses" id="courseRub">
-                                    Курсы валют (рубли) на текущее время
-                                </li>
+                            <ul class="list-style warning-list pl-0">                       
                                 <li class="courses" id="courseDol">
-                                    Курсы валют (доллары) на текущее время
+                                    <div id="usd_kurs"></div>
                                 </li>
                                 <li class="courses" id="courseEur">
-                                    Курсы валют (евро) на текущее время
+                                    <div id="eur_kurs"></div>
                                 </li>
                             </ul>
                         </div>
