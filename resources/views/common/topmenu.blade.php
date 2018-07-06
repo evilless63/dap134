@@ -36,6 +36,7 @@
 
                         <div class="col-md-4 text-right">
                             <ul class="list-style warning-list pl-0">
+                            
                                 <li class="courses" id="courseRub">
                                     Курсы валют (рубли) на текущее время
                                 </li>
