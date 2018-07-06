@@ -107,8 +107,8 @@ class MailController extends Controller
 
         Mail::send('emails.message', $data, function ($message) use($data, $files){
 
-            $message->from($data['email'], $data['name']);
-            $message->to('vitaliy030589@gmail.com')->subject($data['subject'] . ' - ' .$data['email']);
+            $message->from('info@dap134.ru', $data['name']);
+            $message->to('dap134@yandex.ru')->subject($data['subject'] . ' - ' .$data['email']);
 
             if(is_array($files)) {
                 if(count($files) > 0) {
