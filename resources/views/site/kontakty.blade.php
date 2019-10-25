@@ -46,8 +46,9 @@
                                 <i class="fa fa-mobile"></i>
                             </div>
                             <div class="featured-content">
-                                <h4>Телефон</h4>
-                                <p class="lead"><strong>+7 (969) 658-62-88</strong></p>
+                                <h4>Телефоны</h4>
+                                <p class="lead"><strong>Волгоград: +7 (961) 687-20-52</strong></p>
+                                <p class="lead"><strong>Крым: +7 (978) 711-42-29</strong></p>
                             </div>
                         </div>
                     </div>

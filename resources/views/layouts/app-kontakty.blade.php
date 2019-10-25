@@ -99,7 +99,7 @@
                                             400038, г. Волгоград, ул. Волгоградская, д. 31, офис 3
                                         </address>
                         <div class="tel-info">
-                            <a href="tel:1800452308"><i class="fa fa-mobile icons cyan-color contact-info-icon"></i>+7 (969) 658-62-88</a>
+                            <a href="tel:1800452308"><i class="fa fa-mobile icons cyan-color contact-info-icon"></i>+7 (961) 687-20-52</a>
                         </div>
                         <a href="mailto:hello@spiritapp.com"><i class="fa fa-envelope-o icons cyan-color contact-info-icon"></i>dap134@yandex.ru</a>
                     </div>

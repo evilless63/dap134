@@ -14,7 +14,10 @@
                         <div class="col">
                             <ul class="list-style warning-list pl-0">
                                 <li>
-                                    <i class="fa fa-mobile-phone"></i>+7 (969) 658-62-88
+                                    <i class="fa fa-mobile-phone"></i>Волгоград: +7 (961) 687-20-52
+                                </li>
+                                <li>
+                                    <i class="fa fa-mobile-phone"></i>Крым: +7 (978) 711-42-29
                                 </li>
                                 <li>
                                     <i class="fa fa-envelope"></i>dap134@yandex.ru
