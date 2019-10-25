@@ -79,4 +79,5 @@ Route::post('documents/updatelist', 'DocumentController@updatelist');
 
 Route::post('emails/sendemail', 'MailController@sendemail');
 
+Route::resource('categories', 'CategoryController');
 

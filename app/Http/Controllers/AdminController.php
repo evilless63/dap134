@@ -7,6 +7,7 @@ use Auth;
 use App\Post;
 use App\Document;
 use App\Message;
+use App\Category;
 
 class AdminController extends Controller
 {
@@ -24,7 +25,9 @@ class AdminController extends Controller
             $posts = Post::all();
             $messages = Message::all();
 
-            return view('admin.home', compact('documents', 'posts','messages'));
+            $categories = Category::all();
+
+            return view('admin.home', compact('documents', 'posts','messages', 'categories'));
             
         } else {
             return abort(404);

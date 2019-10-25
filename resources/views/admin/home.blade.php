@@ -24,6 +24,9 @@
                                         <a class="nav-link" data-toggle="tab" href="#documents_create" role="tab">Добавить документ</a>
                                     </li>
                                     <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#category_documents_create" role="tab">Добавить категорию документов</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link" data-toggle="tab" href="#imushestvo" role="tab">Обновление списка имущества</a>
                                     </li>
                                     <li class="nav-item">
@@ -79,6 +82,31 @@
                                     </table>
 
                                     </div>
+                                    <div class="tab-pane" id="category_documents_create" role="tabpanel">
+                                        
+                                        <form method="post" action="{{action('CategoryController@store')}}" enctype="multipart/form-data">
+                                            {{csrf_field()}}
+                                            <div class="form-group">
+                                                <label for="categoryCreateFile">Файл изображения категории</label>
+                                                <input type="file" name="file_path" class="form-control-file" id="categoryCreateFile">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="categoryCreateTitle">Наименование категории не более 255 символов</label>
+                                                <input type="text" name="title" class="form-control" id="categoryCreateTitle" placeholder="Укажите наименование категории">
+                                            </div>
+
+                                            <button type="submit" class="btn std-btn btn-sm btn-common" id="">Создать</button>
+                                        </form>
+                                        
+                                        <h3>Созданные категории:</h3>
+                                        @forelse($categories as $category)
+                                            <p>{{$category->name}}</p>           
+                                        @empty
+                                            <h3>Нет категорий !</h3>
+                                        @endforelse
+
+                                    </div>
                                     <div class="tab-pane" id="documents_create" role="tabpanel">
                                         
                                     <form method="post" action="{{action('DocumentController@store')}}" enctype="multipart/form-data">
@@ -97,6 +125,7 @@
                                     </form>
 
                                     </div>
+
                                     <div class="tab-pane" id="imushestvo" role="tabpanel">
                                         <form method="post" action="{{action('DocumentController@updatelist')}}" enctype="multipart/form-data">
                                         {{csrf_field()}}

@@ -79,6 +79,16 @@
 </div>
 
 <div class="container">
+  <div class="row">
+    <div class="col">
+        <div class="page-header-title">
+          <h2 class="heading-title text-center">Извещения и комиссионные продажы</h2>
+        </div>
+    </div> 
+  </div>
+</div>
+
+<div class="container">
     <div class="row">
         <div class="col">
             <div class="page-header-title">
