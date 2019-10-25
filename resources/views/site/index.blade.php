@@ -13,13 +13,14 @@
               <div class="row">
                 <!-- Start featured -->
                 <div class="col-md-6 col-sm-6">
-                  <div class="featured-box">
+                  <div class="featured-box" style="    align-items: baseline;
+    display: flex;">
                     <div class="featured-icon">
                       <i class="fa fa-bolt"></i>
                     </div>
                     <div class="featured-content">
                       <h4>Эффективность</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.</p>
+                      <p></p>
                     </div>
                   </div>
                 </div>
@@ -27,13 +28,14 @@
                 
                 <!-- Start featured -->
                 <div class="col-md-6 col-sm-6">
-                  <div class="featured-box">
+                  <div class="featured-box" style="    align-items: baseline;
+    display: flex;">
                     <div class="featured-icon">
                       <i class="fa fa-diamond"></i>
                     </div>
                     <div class="featured-content">
                       <h4>Надежность</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.</p>
+                      <p></p>
                     </div>
                   </div>
                 </div>
@@ -41,13 +43,15 @@
 
                 <!-- Start featured -->
                 <div class="col-md-6 col-sm-6">
-                  <div class="featured-box">
+                  <div class="featured-box" style="    align-items: baseline;
+    display: flex;
+    margin-top: 30px;">
                     <div class="featured-icon">
                       <i class="fa fa-users"></i>
                     </div>
                     <div class="featured-content">
                       <h4>Опыт</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.</p>
+                      <p></p>
                     </div>
                   </div>
                 </div>
@@ -55,13 +59,15 @@
 
                 <!-- Start featured -->
                 <div class="col-md-6 col-sm-6">
-                  <div class="featured-box">
+                  <div class="featured-box" style="    align-items: baseline;
+    display: flex;
+    margin-top: 30px;">
                     <div class="featured-icon">
                       <i class="fa fa-cogs"></i>
                     </div>
                     <div class="featured-content">
                       <h4>Планирование</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.</p>
+                      <p></p>
                     </div>
                   </div>
                 </div>

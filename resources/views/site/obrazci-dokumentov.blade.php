@@ -21,36 +21,23 @@
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Анкета-сведения об участнике для физических лиц</td>
-                        <td><a href="{{ asset('document_files/anketa_na_fizicheskoe_lico_lico_1.doc') }}">Ссылка на документ</a></td>
+                        <td>Заявка на участие в торгаж</td>
+                        <td><a href="{{ asset('document_files/zayavka_na_torgi.doc') }}" target="_blank">Ссылка на документ</a></td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
-                        <td>Анкета-сведения об участнике для юридических лиц</td>
-                        <td><a href="{{ asset('document_files/anketa_na_yuridicheskoe_lico_1.doc') }}">Ссылка на документ</a></td>
+                        <td>Опись документов</td>
+                        <td><a href="{{ asset('document_files/opis_documentov.doc') }}" target="_blank">Ссылка на документ</a></td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td>Заявка (комиссия)
-                            <br>
-                            ПРИЛОЖЕНИЕ-1 (заявка на приобретение имущества, обращенного в собственность государства)</td>
-                        <td><a href="{{ asset('document_files/zayvka_komissiya.docx') }}">Ссылка на документ</a>
-                        <br><a href="{{ asset('document_files/prilozhenie-1-zayavka-na-priobretenie-imushchestva-obrashchennogo-v-sobstvennost-gosudarstva.docx') }}">Ссылка на документ</a></td>
+                        <td>Протокол о результатах торгов</td>
+                        <td><a href="{{ asset('document_files/protocol_o_rezultatah_torgov.doc') }}" target="_blank">Ссылка на документ</a></td>
                     </tr>
                     <tr>
                         <th scope="row">4</th>
-                        <td>Заявка (торги)</td>
-                        <td><a href="{{ asset('document_files/blank-zajavka-na-uchastie-v-torgakh.doc') }}">Ссылка на документ</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Заявление на возврат задатка</td>
-                        <td><a href="{{ asset('document_files/zayvlenie_vozvrat_1.doc') }}">Ссылка на документ</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td>Опись к заявке</td>
-                        <td><a href="{{ asset('document_files/opis_k_zayvke_na_torgi.doc') }}">Ссылка на документ</a></td>
+                        <td>Заявка на приобретение имущества</td>
+                        <td><a href="{{ asset('document_files/zayavka_na_priobretenie_imushestva.doc') }}" target="_blank">Ссылка на документ</a></td>
                     </tr>
                 </tbody>
             </table>
