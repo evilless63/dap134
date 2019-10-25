@@ -16,10 +16,15 @@ class DocumentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category = 0)
     {
-        $documents = Document::where('is_active', '1')->get();
-        return view('site.informacionnye-soobshcheniya', compact('documents'));
+        if($category <> 0) {
+            $documents = Document::where('is_active', '1')->where('category', $category)->orderBy('created_at', 'desc')->get();     
+        } else {
+            $documents = Document::where('is_active', '1')->orderBy('created_at', 'desc')->get();
+        }
+        
+        return view('site.informacionnye-soobshcheniya', compact('documents', 'category'));
     }
 
     /**
@@ -51,6 +56,7 @@ class DocumentController extends Controller
         $document->file_path = $file_path;
         $document->title = $request->title;
         $document->is_active = 1;
+        $document->category = $request->category;
 
         $document->save();
 
@@ -107,6 +113,11 @@ class DocumentController extends Controller
         if ($request->has('is_active'))
         {
             $document->is_active = $request->get('is_active');
+        }
+
+        if ($request->has('category'))
+        {
+            $document->category = $request->get('category');
         }
 
         $document->save();

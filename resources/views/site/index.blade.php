@@ -3,6 +3,37 @@
 @section('title', 'Главная')
 
 @section('content')
+
+<div class="container">
+  <div class="features-wrap">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="featured-box">
+          <div class="featured-icon">
+              <i class="fa fa-bolt"></i>
+          </div>  
+          <div class="featured-content">
+              <h4><a class="nav-link" href="{{ route('docs_by_category', ['category' => 1]) }}">Извещения о торгах Крым</a></h4>
+              <p></p>
+          </div>
+      </div>  
+    </div>
+
+    <div class="col-md-3">
+        <div class="featured-box">
+            <div class="featured-icon">
+                <i class="fa fa-bolt"></i>
+            </div>  
+            <div class="featured-content">
+                <h4><a class="nav-link" href="{{ route('docs_by_category', ['category' => 2]) }}">Извещения о торгах Волгоград</a></h4>
+                <p></p>
+            </div>
+        </div>  
+      </div>
+  </div>
+</div>
+</div>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">

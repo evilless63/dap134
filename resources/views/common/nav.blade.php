@@ -13,8 +13,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('prodazha-imuschestva') }}">Продажа имущества</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('documents.index') }}">Информационные сообщения</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Информационные сообщения</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('docs_by_category', ['category' => 2]) }}">Волгоград</a>
+                            <a class="dropdown-item" href="{{ route('docs_by_category', ['category' => 1]) }}">Крым</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Условия реализации</a>

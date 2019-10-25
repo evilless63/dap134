@@ -7,7 +7,14 @@
     <div class="row justify-content-center">
         <div class="col">
             <div class="page-header-title">
-                <h2 class="heading-title text-center">Информационные сообщения</h2>
+                <h2 class="heading-title text-center">Информационные сообщения (
+                    @if($category == 1) 
+                        Крым
+                    @elseif($category == 2)
+                        Волгоград
+                    @else
+                    @endif
+                    )</h2> 
             </div>
 
             <ul class="list-style arrow-list arrow-list-one pl-0">

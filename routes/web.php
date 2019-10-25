@@ -63,6 +63,8 @@ Route::get('/politic', function () {
 
 Route::get('/admin/home', 'AdminController@index')->name('admin_home');
 
+Route::get('/documents_get/{category}', 'DocumentController@index')->name('docs_by_category');
+Route::get('/documents', 'DocumentController@index')->name('documents.index');
 
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');

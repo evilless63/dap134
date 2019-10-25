@@ -47,6 +47,7 @@
                                                 <th>Новый файл</th>
                                                 <th>Наименование</th>
                                                 <th>Активен</th>
+                                                <th>Категория</th>
                                                 <th></th>
                                                 <th></th>
                                             </tr>
@@ -60,8 +61,15 @@
                                                     <td><a href="/document_files/{{$document->file_path}}">{{$document->file_path}}</a></td>
                                                     <td><input type="file" name="file_path" class="form-control-file" id="exampleFormControlFile1"></td>
                                                     <td><input type="text" name="title" value="{{$document->title}}"></td>
+                
                                                     <input type="hidden" name="is_active" value="0">
                                                     <td><input type="checkbox" name="is_active"  value="1" {{ $document->is_active == 1 ? 'checked' : ''}}></td>
+                                                    <td>
+                                                        <select name="category"> <!--Supplement an id here instead of using 'name'-->
+                                                            <option value="0" {{ $document->category == 0 ? 'selected' : ''}}>Не выбрана</option>
+                                                            <option value="1" {{ $document->category == 2 ? 'selected' : ''}}>Волгоград</option> 
+                                                            <option value="2" {{ $document->category == 1 ? 'selected' : ''}}>Крым</option>
+                                                        </select></td>
                                                     <td><button type="submit" class="btn std-btn btn-sm btn-common">Обновить</button></td>
                                                 </form>
                                                 <td>
@@ -92,6 +100,16 @@
                                             <label for="documentCreateFileTitle">Наименование документа не более 255 символов</label>
                                             <input type="text" name="title" class="form-control" id="documentCreateFileTitle" placeholder="Укажите наименование документа">
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="documentCreateFileCategory">Категория размещения:</label>
+                                            <select name="category" id="documentCreateFileCategory"> <!--Supplement an id here instead of using 'name'-->
+                                                <option value="0" {{ $document->category == 0 ? 'selected' : ''}}>Не выбрана</option>
+                                                <option value="1" {{ $document->category == 2 ? 'selected' : ''}}>Волгоград</option> 
+                                                <option value="2" {{ $document->category == 1 ? 'selected' : ''}}>Крым</option>
+                                            </select>
+                                        </div>
+                                        
 
                                         <button type="submit" class="btn std-btn btn-sm btn-common" id="">Создать</button>
                                     </form>
