@@ -53,13 +53,13 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="meta_keys">Мета ключи (необязательно) :</label>
-            <input type="text" name="meta_keys" value="{{$post->meta_keys}}" id="meta_keys" required />
+            <input type="text" name="meta_keys" value="{{$post->meta_keys}}" id="meta_keys" />
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
                 <label for="meta_description">Мета описание (необязательно) :</label>
-                <input type="text" name="meta_description" value="{{$post->meta_description}}" id="meta_description" required />
+                <input type="text" name="meta_description" value="{{$post->meta_description}}" id="meta_description" />
         </div>
     </div>
 
@@ -84,7 +84,62 @@
 <script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace( 'editorPostTextarea' );
+
+    CKEDITOR.on( 'dialogDefinition', function( ev ) {
+        var dialogName = ev.data.name;
+        var dialogDefinition = ev.data.definition;
+
+        if ( dialogName == 'table' ) {
+            var info = dialogDefinition.getContents( 'info' );
+
+            info.get( 'txtWidth' )[ 'default' ] = '100%';       // Set default width to 100%
+            info.get( 'txtBorder' )[ 'default' ] = '1';         // Set default border to 0
+        }
+    });
+
+    CKEDITOR.replace( 'editorPostTextarea'
+    , {
+    on: {
+        instanceReady: function() {
+            this.dataProcessor.htmlFilter.addRules( {
+                elements: {
+                    table: function( el ) {
+                        // Add an attribute.
+                        
+                        el.attributes.style = '';
+                        el.attributes.width = '';
+                        // Add some class.
+                        el.addClass( 'table' );
+                        el.addClass( 'table-hover-common' );
+                    },
+
+                    tr: function( el ) {
+                        // Add an attribute.
+                        
+                        el.attributes.style = '';
+                        el.attributes.width = '';
+                        // Add some class.
+                    },
+
+                    td: function( el ) {
+                        // Add an attribute.
+                        
+                        el.attributes.style = '';
+                        el.attributes.width = '';
+                        // Add some class.
+                    },
+
+                    span: function( el ) {
+                        // Add an attribute.
+                        
+                        el.attributes.style = '';
+                        // Add some class.
+                    }
+                }
+            } );            
+        }
+    }
+}  );
 </script>
 
 @endsection

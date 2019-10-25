@@ -37,17 +37,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+
+        $post = new Post();
+
         if($request->hasfile('image_path')) {
             $file = $request->image_path;
             $image_path = time().$file->getClientOriginalName();
             $file->move(public_path().'/posts_files/', $image_path);
+            $post->image_path = $image_path;
+        } else {
+            $post->image_path = "";
         }
-
-        $post = new Post();
-        $post->image_path = $image_path;
+        
         $post->title = $request->title;
         $post->description = $request->description;
-        $post->description_preview = mb_strimwidth(strip_tags($post->description), 0, 30, "...");
+        // $post->description_preview = mb_strimwidth(strip_tags($post->description), 0, 30, "...");
         $post->is_active = 1;
 
         $post->save();
@@ -106,7 +111,6 @@ class PostController extends Controller
         if ($request->has('description'))
         {
             $post->description = $request->get('description');
-            $post->description_preview = mb_strimwidth(strip_tags($post->description), 0, 30, "...");
         }
 
         
@@ -133,7 +137,9 @@ class PostController extends Controller
         $post = Post::findorfail($id);
         $destinationPath = '/posts_files/';
 
-        unlink(public_path('/posts_files/'.$post->image_path));
+        if($post->image_path <> "") {
+            unlink(public_path('/posts_files/'.$post->image_path));
+        }
 
         $post->delete();
         

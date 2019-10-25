@@ -30,6 +30,30 @@
             </div>
         </div>  
       </div>
+
+      <div class="col-md-3">
+          <div class="featured-box">
+              <div class="featured-icon">
+                  <i class="fa fa-bolt"></i>
+              </div>  
+              <div class="featured-content">
+                  <h4><a class="nav-link" href="{{action('PostController@show', '2')}}">Комиссионная продажа Крым</a></h4>
+                  <p></p>
+              </div>
+          </div>  
+        </div>
+
+        <div class="col-md-3">
+            <div class="featured-box">
+                <div class="featured-icon">
+                    <i class="fa fa-bolt"></i>
+                </div>  
+                <div class="featured-content">
+                    <h4><a class="nav-link" href="{{action('PostController@show', '1')}}">Комиссионная продажа Волгоград</a></h4>
+                    <p></p>
+                </div>
+            </div>  
+          </div>
   </div>
 </div>
 </div>

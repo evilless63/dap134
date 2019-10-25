@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col-md-12">
             <h4>Изображение новости:</h4>
-            <input type="file" name="image_path" accept="image/*" required>
+            <input type="file" name="image_path" accept="image/*">
         </div>
 
     </div>
@@ -44,13 +44,13 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="meta_keys">Мета ключи (необязательно) :</label>
-            <input type="text" name="meta_keys" id="meta_keys" required />
+            <input type="text" name="meta_keys" id="meta_keys" />
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
                 <label for="meta_description">Мета описание (необязательно) :</label>
-                <input type="text" name="meta_description" id="meta_description" required />
+                <input type="text" name="meta_description" id="meta_description" />
         </div>
     </div>
 
@@ -74,7 +74,24 @@
 <script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace( 'editorPostTextarea' );
+
+
+    CKEDITOR.replace( 'editorPostTextarea', {
+        on: {
+        instanceReady: function() {
+            this.dataProcessor.htmlFilter.addRules( {
+                elements: {
+                    table: function( el ) {
+                        // Add an attribute.
+                        // Add some class.
+                        el.addClass( 'table' );
+                        el.addClass( 'table-hover-common' );
+                    }
+                }
+            } );            
+        }
+    }
+    } );
 </script>
 
 @endsection
